@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count number of occurrences</title>
+  <style>
+    body {
+      background-color: #111;
+    }
+    .code-container {
+      background-color: whitesmoke;
+    }
+
+    pre {
+      padding:15px;
+    }
+
+    code {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+<div class="code-container">
+<pre>
+<code>
+// Count number of occurrences 
+// forEach example
+const nums = [1, 5, 4, 4, 3, 3, 4, 5, 6];
+const uniqueNums = [];
+const output = {};
+
+nums.forEach((val, i, arr) => {
+  if (uniqueNums.includes(val) === false) {
+    uniqueNums.push(val);
+  }
+});
+//uniqueNums; 
+uniqueNums.sort();
+//uniqueNums; 
+
+uniqueNums.forEach((val, i, arr) => {
+  let counter = 0;
+  nums.forEach((numsVal, numsI, numsArr) => {
+    if (val === numsVal) {
+      counter++;
+    }
+  });
+  output[val] = counter;  
+});
+//output;
+console.log(output);
+</code>
+</pre>
+</div>
+</body>
+</html>
